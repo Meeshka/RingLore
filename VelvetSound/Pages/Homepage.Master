@@ -1,0 +1,175 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Homepage.Master.cs" Inherits="VelvetSound.Pages.Site1" %>
+
+<!DOCTYPE html>
+<asp:Label ID="lblUser" runat="server" Text="hello visitor" />
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            padding-top: 200px; /* reserve space for the top logo strip */
+            background-color: #1c2a1d;
+        }
+
+        table, td, tr {
+            background-color: #1c2a1d;
+        }
+
+        
+
+        li {
+            float: left;
+            width: 193px;
+            height: 172px;
+        }
+
+        li a {
+                background-color: #1c2a1d;
+                display: block;
+                padding: 10px 18px;
+                margin: 0px 19px 19px 37px;
+                color: #ffd700; /* gold for good contrast */
+                font-size: 1.15rem; /* scalable */
+                font-weight: 600;
+                text-decoration: none;
+                font-family: 'Segoe UI', Tahoma, sans-serif;
+                text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+        }
+
+        li a:hover {
+                color: #ffffff;
+                background-color: rgba(255,255,255,0.04);
+        }
+
+        /* Larger sizes on wider viewports */
+        @media (min-width: 1200px) {
+            li a { font-size: 1.4rem; }
+        }
+
+        ul {
+            background-color: rgba(28,42,29,0.95);
+            width: 100%;
+            height: 52px;
+            margin: 0;
+            padding: 10px;
+            overflow: hidden;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 20;
+        }
+
+        .auto-style2 {
+            width: 426px;
+            height: 247px;
+        }
+
+        .auto-style3 {
+            width: 656px;
+            height: 24px;
+        }
+
+        .auto-style4 {
+            height: 247px;
+            width: 763px;
+        }
+
+        /* Site logo as a narrow fixed strip at the top */
+        .site-logo {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 200px; /* thin horizontal strip */
+            object-fit: contain; /* scale the whole image instead of cropping */
+            object-position: center;
+            background-color: #1c2a1d; /* fill empty area to match page */
+            z-index: 999;
+            max-width: none;
+        }
+
+        /* Labels for login form: light color and fantasy-like font */
+        .form-label {
+            color: #fff8dc; /* light cornsilk */
+            font-family: 'Cinzel', 'Papyrus', fantasy, serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+        }
+    /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.12);
+            font-weight: 600;
+            cursor: pointer;
+            color: #111;
+            background: linear-gradient(180deg,#ffd86b,#ffc000);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.25);
+        }
+        .btn.btn-secondary {
+            background: linear-gradient(180deg,#ffffff,#e6e6e6);
+            color: #222;
+        }
+        .btn:active { transform: translateY(1px); box-shadow:none; }
+    </style>
+</head>
+<body>
+    <asp:Image ID="imgLogo" runat="server" ImageUrl="~/images/images/Logo.jpeg" AlternateText="Logo" CssClass="site-logo" />
+    <form id="form1" runat="server">
+        <div>
+            <table width="100%" table-layout="fixed">
+                <tr> 
+                    <td colspan="3">
+                    <ul>
+                    <li><a  href="Home.aspx">Homepage</a></li>
+                    <li><a href="Signup.aspx">Register</a></li>
+                    <li><a href="login.aspx">Login</a></li>
+                    <li runat="server" id="AboutCharacters"><a class="nav-link" href="AboutCharacters.aspx">About Characters</a></li>
+                    <li runat="server" id="Aboutlotr"><a class="nav-link" href="Aboutlotr.aspx">About lotr</a></li>
+                    <li runat="server" id="InteractiveMap"><a class="nav-link" href=" InteractiveMap.aspx"> Interactive Map</a></li>
+                    <li runat="server" id="JJRTolkien"><a class="nav-link" href="JJRTolkien.aspx">JJR Tolkien</a></li>
+                    <li runat="server" id="MagicalCreatures"><a class="nav-link" href="MagicalCreatures.aspx">Magical Creatures</a></li>     
+                    <li runat="server" id="Users"><a class="nav-link" href="Users.aspx">Users</a></li>  
+                               
+                     </ul>
+                    </td>
+ </tr>
+            </table>
+            
+        </div>
+        <div>
+          
+
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <p style="margin-left: 0px; color: gold; width: 1856px; margin-bottom: 390px; height: 568px;">
+                    Welcome to Ringlore
+Step into Middle-earth, where ancient legends, brave heroes, and dark powers shape the fate of all.
+Here you can explore the rich world created by J.R.R. Tolkien—from the Shire to Mordor and beyond.
+                    <br />Whether you're a long-time fan or new to the tales of Middle-earth,<br />Ringlore is your gateway to:<br />
+                    <br />
+                    <br />The story of The Lord of the Rings
+                    <br />
+                    <br />Detailed character backgrounds
+                    <br />
+                    <br />Magical creatures and ancient beings
+                    <br />
+                    <br />Insights into Tolkien’s life and creations
+                    <br />
+                    <br />Begin your journey. The One Ring awaits…
+                </p>
+                <p style="margin-left: 320px">
+                    &nbsp;
+                </p>
+                
+                
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+</html>
