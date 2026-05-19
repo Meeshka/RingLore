@@ -147,7 +147,7 @@
                     <li runat="server" id="InteractiveMap"><a class="nav-link" href="/Pages/InteractiveMap.aspx">Interactive Map</a></li>
                     <li runat="server" id="JRRTolkien"><a class="nav-link" href="/Pages/JRRTolkien.aspx">JRR Tolkien</a></li>
                     <li runat="server" id="MagicalCreatures"><a class="nav-link" href="/Pages/MagicalCreatures.aspx">Magical Creatures</a></li>     
-                    <li runat="server" id="Users"><a class="nav-link" href="/Users.aspx">Users</a></li>  
+                    <li runat="server" id="Users"><a class="nav-link" href="/Pages/Users.aspx">Users</a></li>  
                                
                      </ul>
                     </td>

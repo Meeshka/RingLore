@@ -20,6 +20,56 @@
         .edit-user-page input {
             color: #111;
         }
+
+        .edit-user-actions {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .edit-user-btn {
+            min-width: 112px;
+            padding: 10px 18px;
+            border: 1px solid rgba(255, 215, 0, 0.35);
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.35);
+            transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+        }
+
+        .edit-user-btn-primary {
+            background-color: #ffd700;
+            color: #1c2a1d;
+        }
+
+        .edit-user-btn-secondary {
+            background-color: transparent;
+            color: #ffd700;
+        }
+
+        .edit-user-btn:hover,
+        .edit-user-btn:focus {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.45);
+        }
+
+        .edit-user-btn-primary:hover,
+        .edit-user-btn-primary:focus {
+            background-color: #ffe45c;
+        }
+
+        .edit-user-btn-secondary:hover,
+        .edit-user-btn-secondary:focus {
+            background-color: rgba(255, 215, 0, 0.12);
+        }
+
+        .edit-user-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -84,7 +134,15 @@
                        <lable>Phone number:</lable>
                    </td>
                    <td>
-                       <input type="text" name="phone number" runat="server"/>
+                       <input type="text" name="phone" id="phone" runat="server"/>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <lable>Address:</lable>
+                   </td>
+                   <td>
+                       <input type="text" name="address" id="address" runat="server"/>
                    </td>
                </tr>
                <tr>
@@ -100,15 +158,17 @@
                        <lable>Email:</lable>
                    </td>
                    <td>
-                       <input type="text" name="email" runat="server"/>
+                       <input type="text" name="email" id="email" runat="server"/>
                    </td>
                </tr>
  
            </table>
            <div id="msg" runat="server"> </div>
            <%--<input type="submit" value="send" />--%>
-           <asp:Button runat="server" ID="btnSave" Text="Save" OnClick="btnSave_Click" />
-           <input type="reset" value="reset" />
+           <div class="edit-user-actions">
+               <asp:Button runat="server" ID="btnSave" Text="Save" OnClick="btnSave_Click" CssClass="edit-user-btn edit-user-btn-primary" />
+               <input type="reset" value="Reset" class="edit-user-btn edit-user-btn-secondary" />
+           </div>
        </form>
    </center>
 </div>

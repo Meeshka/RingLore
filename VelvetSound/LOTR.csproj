@@ -71,8 +71,8 @@
     <Content Include="App_Data\UsersDB_log.ldf">
       <DependentUpon>UsersDB.mdf</DependentUpon>
     </Content>
-    <Content Include="EditUser.aspx" />
-    <Content Include="filterUserTable.aspx" />
+    <Content Include="Pages\EditUser.aspx" />
+    <Content Include="Pages\filterUserTable.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\Ancalagon the Black.jpg" />
     <Content Include="images\Bilbo.jpg" />
@@ -113,22 +113,22 @@
     <Content Include="Pages\Signup.aspx" />
     <Content Include="Pages\Aboutlotr.aspx" />
     <Content Include="Pages\JRRTolkien.aspx" />
-    <Content Include="Users.aspx" />
+    <Content Include="Pages\Users.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EditUser.aspx.cs">
+    <Compile Include="Pages\EditUser.aspx.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="EditUser.aspx.designer.cs">
+    <Compile Include="Pages\EditUser.aspx.designer.cs">
       <DependentUpon>EditUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="filterUserTable.aspx.cs">
+    <Compile Include="Pages\filterUserTable.aspx.cs">
       <DependentUpon>filterUserTable.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="filterUserTable.aspx.designer.cs">
+    <Compile Include="Pages\filterUserTable.aspx.designer.cs">
       <DependentUpon>filterUserTable.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
@@ -200,11 +200,11 @@
       <DependentUpon>JRRTolkien.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Users.aspx.cs">
+    <Compile Include="Pages\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Users.aspx.designer.cs">
+    <Compile Include="Pages\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
   </ItemGroup>

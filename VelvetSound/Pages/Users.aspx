@@ -125,7 +125,7 @@
 </div>
 
 <div class="users-actions">
-    <asp:Button runat="server" ID="DeleteBtn" Text="Check on and delete" OnClick="DeleteBtn_Click" CssClass="users-btn users-btn-secondary" />
+    <asp:Button runat="server" ID="DeleteBtn" Text="Delete selected" OnClick="DeleteBtn_Click" CssClass="users-btn users-btn-secondary" />
     <asp:Button runat="server" ID="UpdateBtn" Text="Update user" OnClick="UpdateBtn_Click" CssClass="users-btn users-btn-primary" />
 </div>
 
