@@ -23,7 +23,7 @@ namespace VelvetSound
                 cmd.Parameters.AddWithValue("@p", user.pass ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@c", user.city ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@b", user.birthday == default(DateTime) ? (object)DBNull.Value : user.birthday);
-                cmd.Parameters.AddWithValue("@g", user.gender == 0 ? "male" : "female");
+                cmd.Parameters.AddWithValue("@g", string.IsNullOrWhiteSpace(user.gender) ? "male" : user.gender);
                 cmd.Parameters.AddWithValue("@e", user.email ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@t", user.phone ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@a", user.address ?? (object)DBNull.Value);
@@ -35,7 +35,7 @@ namespace VelvetSound
         public static void Update(User user)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("UPDATE tblUsers SET FirstName=@f,LastName=@l,Username=@u,Password=@p,Town=@c,BirthDate=@b,Email=@e,tel=@t,address=@a WHERE UserId=@id", con))
+            using (SqlCommand cmd = new SqlCommand("UPDATE tblUsers SET FirstName=@f,LastName=@l,Username=@u,Password=@p,Town=@c,BirthDate=@b,gender=@g,Email=@e,tel=@t,address=@a WHERE UserId=@id", con))
             {
                 cmd.Parameters.AddWithValue("@f", user.fName ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@l", user.lName ?? (object)DBNull.Value);
@@ -43,6 +43,7 @@ namespace VelvetSound
                 cmd.Parameters.AddWithValue("@p", user.pass ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@c", user.city ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@b", user.birthday == default(DateTime) ? (object)DBNull.Value : user.birthday);
+                cmd.Parameters.AddWithValue("@g", string.IsNullOrWhiteSpace(user.gender) ? "male" : user.gender);
                 cmd.Parameters.AddWithValue("@e", user.email ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@t", user.phone ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@a", user.address ?? (object)DBNull.Value);

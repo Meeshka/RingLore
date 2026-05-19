@@ -70,6 +70,17 @@
             transform: translateY(0);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.35);
         }
+
+        .edit-user-gender {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .edit-user-gender label {
+            color: #fff8dc;
+            font-weight: 600;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -159,6 +170,21 @@
                    </td>
                    <td>
                        <input type="text" name="email" id="email" runat="server"/>
+                   </td>
+               </tr>
+               <tr>
+                   <td>
+                       <lable>Gender:</lable>
+                   </td>
+                   <td>
+                       <div class="edit-user-gender">
+                           <input type="radio" id="genderMale" name="gender" value="male" runat="server" />
+                           <label for="genderMale">Male</label>
+                           <input type="radio" id="genderFemale" name="gender" value="female" runat="server" />
+                           <label for="genderFemale">Female</label>
+                           <input type="radio" id="genderOther" name="gender" value="other" runat="server" />
+                           <label for="genderOther">Other</label>
+                       </div>
                    </td>
                </tr>
  

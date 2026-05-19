@@ -16,6 +16,6 @@ namespace VelvetSound.Models
         public string address { get; set; }
         public DateTime birthday { get; set; }
 
-        public int gender { get; set; }
+        public string gender { get; set; }
     }
 }

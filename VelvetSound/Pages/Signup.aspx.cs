@@ -30,6 +30,7 @@ namespace VelvetSound.Pages
                 user.phone = Request.Form["phone"];
                 user.email = Request.Form["email"];
                 user.address = Request.Form["address"];
+                user.gender = Request.Form["gender"];
                 DateTime bd;
                 if (DateTime.TryParse(Request.Form["birthday"], out bd)) user.birthday = bd;
 
