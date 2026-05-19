@@ -29,7 +29,7 @@ namespace VelvetSound
         }
         public DataSet RetrieveUsersTable(string SQLStr)
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["Database2"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["UsersDB"].ConnectionString;
             // "Server=SERVER_NAME;Database=DB_NAME;User Id=USERNAME;Password=PASSWORD";
             SqlConnection con = new SqlConnection(connectionString);
 
@@ -65,7 +65,7 @@ namespace VelvetSound
             foreach (DataRow row in dt.Rows)
             {
                 str += "<tr>";
-                str += "<td>" + CreateRadioBtn(row["userid"].ToString()) + "</td>";
+                str += "<td>" + CreateRadioBtn(row["UserId"].ToString()) + "</td>";
                 foreach (DataColumn column in dt.Columns)
                 {
                     str += "<td>" + row[column] + "</td>";
@@ -82,11 +82,11 @@ namespace VelvetSound
         {
 
             // התחברות למסד הנתונים
-            string connectionString = ConfigurationManager.ConnectionStrings["Database2"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["UsersDB"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
 
             // טעינת הנתונים
-            string SQLStr = "SELECT * FROM Users";
+            string SQLStr = "SELECT * FROM tblUsers";
             SqlCommand cmd = new SqlCommand(SQLStr, con);
             SqlDataAdapter adapter = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
@@ -110,7 +110,7 @@ namespace VelvetSound
 
             for (int i = 0; i < userisToDelete.Length; i++)
             {
-                DataRow[] dr = ds.Tables[0].Select($"userid = {userisToDelete[i]}");
+                DataRow[] dr = ds.Tables[0].Select($"UserId = {userisToDelete[i]}");
                 dr[0].Delete();
 
             }
@@ -153,7 +153,7 @@ namespace VelvetSound
 
             if (filter.Length == 0)
             {
-                return "SELECT * FROM Users";
+                return "SELECT * FROM tblUsers";
             }
 
 

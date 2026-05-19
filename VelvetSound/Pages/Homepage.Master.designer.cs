@@ -87,13 +87,13 @@ namespace VelvetSound.Pages
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl InteractiveMap;
 
         /// <summary>
-        /// JJRTolkien элемент управления.
+        /// JRRTolkien элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически созданное поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl JJRTolkien;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl JRRTolkien;
 
         /// <summary>
         /// MagicalCreatures элемент управления.

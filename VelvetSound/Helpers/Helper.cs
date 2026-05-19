@@ -15,7 +15,7 @@ namespace VelvetSound
         public static void Insert(User user)
         {
             using (SqlConnection con = new SqlConnection(ConnectionString))
-            using (SqlCommand cmd = new SqlCommand("INSERT INTO tblUsers (FirstName,LastName,Username,Password,Town,BirthDate,gender) VALUES (@f,@l,@u,@p,@c,@b,@g)", con))
+            using (SqlCommand cmd = new SqlCommand("INSERT INTO tblUsers (FirstName,LastName,Username,Password,Town,BirthDate,gender,Email,tel,address) VALUES (@f,@l,@u,@p,@c,@b,@g,@e,@t,@a)", con))
             {
                 cmd.Parameters.AddWithValue("@f", user.fName ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@l", user.lName ?? (object)DBNull.Value);
@@ -24,6 +24,9 @@ namespace VelvetSound
                 cmd.Parameters.AddWithValue("@c", user.city ?? (object)DBNull.Value);
                 cmd.Parameters.AddWithValue("@b", user.birthday == default(DateTime) ? (object)DBNull.Value : user.birthday);
                 cmd.Parameters.AddWithValue("@g", user.gender == 0 ? "male" : "female");
+                cmd.Parameters.AddWithValue("@e", user.email ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@t", user.phone ?? (object)DBNull.Value);
+                cmd.Parameters.AddWithValue("@a", user.address ?? (object)DBNull.Value);
                 con.Open();
                 cmd.ExecuteNonQuery();
             }

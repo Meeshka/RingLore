@@ -3,11 +3,46 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <center>
         <style>
-            p { font-family: cursive; }
+            .register-page {
+                color: #fff8dc;
+                font-family: 'Segoe UI', Tahoma, sans-serif;
+            }
+
+            .register-page p {
+                color: #ffd700;
+                font-family: cursive;
+                text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+            }
+
             table { margin-top: 10px; }
-            label { display: inline-block; width: 140px; }
+
+            .register-page label {
+                color: #fff8dc;
+                display: inline-block;
+                width: 140px;
+                font-weight: 600;
+            }
+
+            .register-page input {
+                color: #111;
+            }
+
+            .register-page input[type="text"],
+            .register-page input[type="password"],
+            .register-page input[type="date"] {
+                padding: 7px 10px;
+                border: 1px solid rgba(255, 215, 0, 0.35);
+                border-radius: 6px;
+            }
+
+            .register-page #msg {
+                color: #fff8dc;
+                margin-top: 12px;
+                font-weight: 600;
+            }
         </style>
 
+        <div class="register-page">
         <p style="font-size: 50px;">Register</p>
 
         <!-- Do not add another <form> — master page already has runat=server form -->
@@ -41,6 +76,10 @@
                 <td><input type="text" name="phone" id="phone" /></td>
             </tr>
             <tr>
+                <td><label>Address:</label></td>
+                <td><input type="text" name="address" id="address" /></td>
+            </tr>
+            <tr>
                 <td><label>Birthday:</label></td>
                 <td><input type="date" name="birthday" id="birthday" /></td>
             </tr>
@@ -61,6 +100,7 @@
         <div id="msg" runat="server"> </div>
         <asp:Button ID="btnSend" runat="server" Text="Send" CssClass="btn" OnClick="btnSend_Click" />
         <input type="reset" value="Reset" class="btn btn-secondary" />
+        </div>
 
     </center>
 </asp:Content>

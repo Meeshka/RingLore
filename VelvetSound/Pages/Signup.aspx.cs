@@ -27,6 +27,9 @@ namespace VelvetSound.Pages
                 user.username = Request.Form["username"];
                 user.pass = Request.Form["pass"];
                 user.city = Request.Form["city"];
+                user.phone = Request.Form["phone"];
+                user.email = Request.Form["email"];
+                user.address = Request.Form["address"];
                 DateTime bd;
                 if (DateTime.TryParse(Request.Form["birthday"], out bd)) user.birthday = bd;
 

@@ -94,7 +94,7 @@
     <Content Include="images\images\Merry.jpg" />
     <Content Include="images\images\Pippin.jpg" />
     <Content Include="images\images\Sam.jpg" />
-    <Content Include="images\JJR TOLKIEN.jpg" />
+    <Content Include="images\JRR TOLKIEN.jpg" />
     <Content Include="images\Lady Galadriel.jpg" />
     <Content Include="images\Landroval.jpg" />
     <Content Include="images\MiddleEarthMap.jpg" />
@@ -112,7 +112,7 @@
     <Content Include="Pages\MagicalCreatures.aspx" />
     <Content Include="Pages\Signup.aspx" />
     <Content Include="Pages\Aboutlotr.aspx" />
-    <Content Include="Pages\JJRTolkien.aspx" />
+    <Content Include="Pages\JRRTolkien.aspx" />
     <Content Include="Users.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -192,12 +192,12 @@
     <Compile Include="Pages\Aboutlotr.aspx.designer.cs">
       <DependentUpon>Aboutlotr.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Pages\JJRTolkien.aspx.cs">
-      <DependentUpon>JJRTolkien.aspx</DependentUpon>
+    <Compile Include="Pages\JRRTolkien.aspx.cs">
+      <DependentUpon>JRRTolkien.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Pages\JJRTolkien.aspx.designer.cs">
-      <DependentUpon>JJRTolkien.aspx</DependentUpon>
+    <Compile Include="Pages\JRRTolkien.aspx.designer.cs">
+      <DependentUpon>JRRTolkien.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Users.aspx.cs">

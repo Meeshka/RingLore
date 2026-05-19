@@ -1,8 +1,30 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Pages/Homepage.Master" AutoEventWireup="true" CodeBehind="EditUser.aspx.cs" Inherits="VelvetSound.EditUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-</asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <style>
+        .edit-user-page {
+            color: #fff8dc;
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+        }
 
+        .edit-user-page p {
+            color: #ffd700;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.7);
+        }
+
+        .edit-user-page td,
+        .edit-user-page lable {
+            color: #fff8dc;
+            font-weight: 600;
+        }
+
+        .edit-user-page input {
+            color: #111;
+        }
+    </style>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+<div class="edit-user-page">
    <center>
        <style>
            p {
@@ -89,6 +111,7 @@
            <input type="reset" value="reset" />
        </form>
    </center>
+</div>
 
 
 </asp:Content>

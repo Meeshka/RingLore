@@ -20,7 +20,7 @@ namespace VelvetSound.Pages
                 AboutCharacters.Style.Add("display", "none");
                 Aboutlotr.Style.Add("display", "none");
                 InteractiveMap.Style.Add("display", "none");
-                JJRTolkien.Style.Add("display", "none");
+                JRRTolkien.Style.Add("display", "none");
                 MagicalCreatures.Style.Add("display", "none");
                 Users.Style.Add("display", "none");
                 // הסתרת התווית של המשתמש
@@ -32,7 +32,7 @@ namespace VelvetSound.Pages
                 AboutCharacters.Style.Add("display", "block");
                 Aboutlotr.Style.Add("display", "block");
                 InteractiveMap.Style.Add("display", "block");
-                JJRTolkien.Style.Add("display", "block");
+                JRRTolkien.Style.Add("display", "block");
                 MagicalCreatures.Style.Add("display", "block");
                 Users.Style.Add("display", "block");
                 // הצגת שם המשתמש בפינה העליונה בגוון בהיר
