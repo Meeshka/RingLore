@@ -1,0 +1,14 @@
+﻿CREATE TABLE tblUsers (
+    
+    FirstName NVARCHAR(50) NOT NULL,
+    LastName NVARCHAR(50) NOT NULL,
+     gender NVARCHAR(10) NOT NULL,
+    BirthDate DATE NOT NULL,
+    Email NVARCHAR(50) NULL,
+    tel NVARCHAR(10) NULL,
+   Town  NVARCHAR(50) NULL,
+   Username  NVARCHAR(50) NOT NULL UNIQUE,
+    address NVARCHAR(50) NULL,
+    Password  NVARCHAR(50) NOT NULL,   
+    ADMIN BIT NOT NULL DEFAULT 0,
+);
