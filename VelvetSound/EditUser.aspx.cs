@@ -82,7 +82,7 @@ namespace VelvetSound
                 }
 
                 // Build SQL (userId is an integer so safe to inline here given no parameter API)
-                string SQLStr = "SELECT * FROM " + Helper.tblName + " WHERE userid = " + userId;
+                string SQLStr = "SELECT * FROM " + Helper.tblName + " WHERE UserId = " + userId;
 
                 DataSet ds = null;
                 try
@@ -104,16 +104,16 @@ namespace VelvetSound
 
                 DataRow dr = ds.Tables[Helper.tblName].Rows[0];
 
-                firstName.Value = dr["fName"]?.ToString() ?? string.Empty;
-                lastName.Value = dr["lName"]?.ToString() ?? string.Empty;
+                firstName.Value = dr["FirstName"]?.ToString() ?? string.Empty;
+                lastName.Value = dr["LastName"]?.ToString() ?? string.Empty;
                 username.Value = dr["username"]?.ToString() ?? string.Empty;
-                pass.Value = dr["pass"]?.ToString() ?? string.Empty;
-                city.Value = dr["city"]?.ToString() ?? string.Empty;
+                pass.Value = dr["Password"]?.ToString() ?? string.Empty;
+                city.Value = dr["Town"]?.ToString() ?? string.Empty;
 
-                if (!dr.IsNull("birthday"))
+                if (!dr.IsNull("BirthDate"))
                 {
                     DateTime bd;
-                    if (DateTime.TryParse(dr["birthday"].ToString(), out bd))
+                    if (DateTime.TryParse(dr["BirthDate"].ToString(), out bd))
                     {
                         // Use four-digit year
                         birthday.Value = bd.ToString("yyyy-MM-dd");
@@ -131,33 +131,31 @@ namespace VelvetSound
             user.pass = pass.Value;
             user.city = city.Value;
             user.birthday = DateTime.Parse(birthday.Value);
-            user.userId = (int)Session["userToUpdate"];
+            user.userId = int.Parse(Session["userToUpdate"].ToString());
             Helper.Update(user);
-            Response.Redirect("HOMEPAGE.aspx");
+            Response.Redirect("/Users.aspx");
         }
 
         protected void btnSave_Click(object sender, EventArgs e)
         {
             int userId = int.Parse(Session["userToUpdate"].ToString());
 
-            string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\Database2.mdf;Integrated Security=True";
-            SqlConnection con = new SqlConnection(connectionString);
+            User user = new User();
+            user.userId = userId;
+            user.fName = firstName.Value;
+            user.lName = lastName.Value;
+            user.username = username.Value;
+            user.pass = pass.Value;
+            user.city = city.Value;
 
-            string SQLStr = @"UPDATE Users 
-                              SET username=@username, pass=@pass
-                              WHERE userid=@userid";
+            DateTime bd;
+            if (DateTime.TryParse(birthday.Value, out bd))
+            {
+                user.birthday = bd;
+            }
 
-            SqlCommand cmd = new SqlCommand(SQLStr, con);
-
-            cmd.Parameters.AddWithValue("@username", username.Value);
-            cmd.Parameters.AddWithValue("@pass", pass.Value);
-            cmd.Parameters.AddWithValue("@userid", userId);
-
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-            Response.Redirect("users.aspx");
+            Helper.Update(user);
+            Response.Redirect("/Users.aspx");
         }
     }
 }

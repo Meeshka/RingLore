@@ -11,7 +11,7 @@
         body {
             margin: 0;
             padding: 0;
-            padding-top: 200px; /* reserve space for the top logo strip */
+            padding-top: 252px; /* reserve space for the fixed logo and nav */
             background-color: #1c2a1d;
         }
 
@@ -22,22 +22,22 @@
         
 
         li {
-            float: left;
-            width: 193px;
-            height: 172px;
+            flex: 0 0 auto;
+            list-style: none;
         }
 
         li a {
                 background-color: #1c2a1d;
                 display: block;
-                padding: 10px 18px;
-                margin: 0px 19px 19px 37px;
+                padding: 10px 12px;
+                margin: 0;
                 color: #ffd700; /* gold for good contrast */
-                font-size: 1.15rem; /* scalable */
+                font-size: 1rem;
                 font-weight: 600;
                 text-decoration: none;
                 font-family: 'Segoe UI', Tahoma, sans-serif;
                 text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+                white-space: nowrap;
         }
 
         li a:hover {
@@ -47,19 +47,31 @@
 
         /* Larger sizes on wider viewports */
         @media (min-width: 1200px) {
-            li a { font-size: 1.4rem; }
+            li a { font-size: 1.05rem; }
         }
 
         ul {
             background-color: rgba(28,42,29,0.95);
             width: 100%;
-            height: 52px;
+            min-height: 52px;
             margin: 0;
-            padding: 10px;
-            overflow: hidden;
+            padding: 8px 12px;
+            overflow-x: auto;
+            overflow-y: hidden;
             box-sizing: border-box;
             position: relative;
             z-index: 20;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .site-nav {
+            position: fixed;
+            top: 200px;
+            left: 0;
+            right: 0;
+            z-index: 998;
         }
 
         .auto-style2 {
@@ -126,16 +138,16 @@
             <table width="100%" table-layout="fixed">
                 <tr> 
                     <td colspan="3">
-                    <ul>
-                    <li><a  href="Home.aspx">Homepage</a></li>
-                    <li><a href="Signup.aspx">Register</a></li>
-                    <li><a href="login.aspx">Login</a></li>
-                    <li runat="server" id="AboutCharacters"><a class="nav-link" href="AboutCharacters.aspx">About Characters</a></li>
-                    <li runat="server" id="Aboutlotr"><a class="nav-link" href="Aboutlotr.aspx">About lotr</a></li>
-                    <li runat="server" id="InteractiveMap"><a class="nav-link" href=" InteractiveMap.aspx"> Interactive Map</a></li>
-                    <li runat="server" id="JJRTolkien"><a class="nav-link" href="JJRTolkien.aspx">JJR Tolkien</a></li>
-                    <li runat="server" id="MagicalCreatures"><a class="nav-link" href="MagicalCreatures.aspx">Magical Creatures</a></li>     
-                    <li runat="server" id="Users"><a class="nav-link" href="Users.aspx">Users</a></li>  
+                    <ul class="site-nav">
+                    <li><a  href="/Pages/Home.aspx">Homepage</a></li>
+                    <li><a href="/Pages/Signup.aspx">Register</a></li>
+                    <li><a href="/Pages/Login.aspx">Login</a></li>
+                    <li runat="server" id="AboutCharacters"><a class="nav-link" href="/Pages/AboutCharacters.aspx">About Characters</a></li>
+                    <li runat="server" id="Aboutlotr"><a class="nav-link" href="/Pages/Aboutlotr.aspx">About LOTR</a></li>
+                    <li runat="server" id="InteractiveMap"><a class="nav-link" href="/Pages/InteractiveMap.aspx">Interactive Map</a></li>
+                    <li runat="server" id="JRRTolkien"><a class="nav-link" href="/Pages/JRRTolkien.aspx">JRR Tolkien</a></li>
+                    <li runat="server" id="MagicalCreatures"><a class="nav-link" href="/Pages/MagicalCreatures.aspx">Magical Creatures</a></li>     
+                    <li runat="server" id="Users"><a class="nav-link" href="/Users.aspx">Users</a></li>  
                                
                      </ul>
                     </td>

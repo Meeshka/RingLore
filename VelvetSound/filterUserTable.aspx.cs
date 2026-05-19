@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace VelvetSound
         {
             if (!IsPostBack)
             {
-                string SQLStr = "SELECT * FROM Users";
+                string SQLStr = "SELECT * FROM tblUsers";
                 DataSet ds = RetrieveUsersTable(SQLStr);
                 DataTable dt = ds.Tables[0];
                 string table = BuildUsersTable(dt);
@@ -24,10 +25,7 @@ namespace VelvetSound
         }
         public DataSet RetrieveUsersTable(string SQLStr)
         {
-            string connectionString =
-@"Data Source = (LocalDB)\MSSQLLocalDB; 
-AttachDbFilename = |DataDirectory|\Database2.mdf;
-Integrated Security = True";
+            string connectionString = ConfigurationManager.ConnectionStrings["UsersDB"].ConnectionString;
             SqlConnection con = new SqlConnection(connectionString);
 
             SqlCommand cmd = new SqlCommand();
@@ -86,11 +84,11 @@ Integrated Security = True";
         {
             if (str.Length == 0)
             {
-                return "SELECT * FROM Users";
+                return "SELECT * FROM tblUsers";
             }
 
             string SQLStr =
-                $"SELECT * FROM Users WHERE fName LIKE '" + str + "' OR lName LIKE '" + str + "'";
+                $"SELECT * FROM tblUsers WHERE FirstName LIKE '" + str + "' OR LastName LIKE '" + str + "'";
 
             return SQLStr;
         }
