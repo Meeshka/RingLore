@@ -59,7 +59,7 @@
             cursor: pointer;
             white-space: nowrap;
             z-index: 2;
-            opacity: 0.72;
+            opacity: 0.45;
             backdrop-filter: blur(1px);
         }
 
